@@ -1,7 +1,5 @@
-import { Inter } from "next/font/google";
-import ".lobals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.scss";
+import "@/styles/index.scss";
 
 export const metadata = {
   title: "App Advisor",
@@ -12,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
