@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.img_container {
+    width: 150px;
+    height: 50px;
+}
+
+.image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar li {
+    list-style: none;
+}

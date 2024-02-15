@@ -1,0 +1,12 @@
+@import '@/styles/theme.scss'; 
+
+.header {
+    position: sticky;
+    top: 0;
+    transition: 0.4s;
+    background-color: transparent;
+}
+  
+.header.bleu {
+    background-color: $nightblue;
+}
