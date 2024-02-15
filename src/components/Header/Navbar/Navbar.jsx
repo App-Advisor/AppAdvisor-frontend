@@ -1,6 +1,7 @@
 import logo from '@/assets/logo.png'
 import styles from './Navbar.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navbar() {
 
@@ -13,15 +14,13 @@ export default function Navbar() {
             </div>
             <div>
                 <ul className={styles.navbar}>
-                    <li><a href="#home">Accueil</a></li>
-                    <li><a href="#about">Catégories</a></li>
-                    <li><a href="#services">Outils</a></li>
-                    <li><a href="#contact">Statistiques</a></li>
+                    <li><Link className={styles.link} href="/">Accueil</Link></li>
+                    <li><Link className={styles.link} href="/Categories">Catégories</Link></li>
+                    <li><Link className={styles.link} href="/Outils">Outils</Link></li>
+                    <li><Link className={styles.link} href="/Statistiques">Statistiques</Link></li>
                 </ul>
             </div>
-            <div>
-                <button className={styles.button}>Get Started</button>
-            </div>
+            <button className={styles.button}>Connexion</button>
         </div>
     );
 }
