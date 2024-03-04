@@ -47,9 +47,9 @@
 }
 
 /*
-* About
+* Outils
 */
-.tool_list {
+.tools {
     padding-top: 100px;
     display: flex;
     flex-direction: column;
@@ -64,4 +64,16 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+/*
+* Catégories
+*/
+.category {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
 }

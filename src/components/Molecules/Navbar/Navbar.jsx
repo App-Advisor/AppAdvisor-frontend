@@ -2,6 +2,7 @@ import logo from '@/assets/logo.png'
 import styles from './Navbar.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '@/components/Atoms/Button/Button';
 
 export default function Navbar() {
 
@@ -20,7 +21,7 @@ export default function Navbar() {
                     <li><Link className={styles.link} href="/Statistiques">Statistiques</Link></li>
                 </ul>
             </div>
-            <button className={styles.button}>Connexion</button>
+            <Button text="Connexion" />
         </div>
     );
 }
