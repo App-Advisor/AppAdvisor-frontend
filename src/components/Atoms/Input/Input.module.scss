@@ -1,0 +1,11 @@
+@import "@/styles/index.scss";
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $nightblue;
+    color: $nightblue;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-size: 16px;
+}

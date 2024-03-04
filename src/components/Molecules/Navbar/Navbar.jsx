@@ -21,7 +21,7 @@ export default function Navbar() {
                     <li><Link className={styles.link} href="/Statistiques">Statistiques</Link></li>
                 </ul>
             </div>
-            <Button text="Connexion" />
+            <Button text="Connexion" link="Connexion" />
         </div>
     );
 }
