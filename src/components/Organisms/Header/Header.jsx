@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.scss';
-import Navbar from './Navbar/Navbar';
+import Navbar from '../../Molecules/Navbar/Navbar';
 
 export default function Header() {
     const pathname = usePathname();

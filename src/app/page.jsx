@@ -1,6 +1,8 @@
 import styles from "./page.module.scss";
 import zigzag from "@/assets/zigzag.svg";
 import Image from "next/image";
+import OutilCard from "@/components/Organisms/OutilCard/OutilCard";
+import SearchBar from "@/components/Molecules/SearchBar/SearchBar";
 
 export default function Home() {
   return (
@@ -12,15 +14,17 @@ export default function Home() {
           <Image fill src={zigzag} style={{objectFit:"cover"}}/>
         </div>
         <h1>Découvrez les meilleures solutions pour votre développement web</h1>
-        <form className={styles.form}>
-          <input type="text" placeholder="Recherchez votre framework, outil, ..."/>
-          <input type="button" className={styles.button} value="Rechercher" />
-        </form>
+        <SearchBar/>
       </div>
     </div>
 
     <div className={styles.tool_list}>
       <h2>Selection d'avis sur les outils</h2>
+      <div className={styles.card_wrapper}>
+        <OutilCard/>
+        <OutilCard/>
+        <OutilCard/>
+      </div>
     </div>
   </main>
   );
