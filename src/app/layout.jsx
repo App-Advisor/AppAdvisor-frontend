@@ -1,6 +1,7 @@
 import Header from "@/components/Header/Header";
 import "./globals.scss";
 import "@/styles/index.scss";
+import Footer from "@/components/Footer/Footer"
 
 export const metadata = {
   title: "App Advisor",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );

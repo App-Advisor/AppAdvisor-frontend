@@ -1,26 +1,26 @@
-import logo from '@/assets/logo.png'
+import logo from '@/assets/logo.png';
 import styles from './Navbar.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+// import Bouton from '../../Bouton/button';
 
 export default function Navbar() {
-
     return (
         <div className={styles.container}>
             <div className={styles.img_container}>
                 <div className={styles.image}>
-                    <Image fill src={logo} style={{objectFit:"cover"}}/>
+                    <Image src={logo} alt="Logo" width={100} height={100} />
                 </div>
             </div>
             <div>
                 <ul className={styles.navbar}>
-                    <li><Link className={styles.link} href="/">Accueil</Link></li>
-                    <li><Link className={styles.link} href="/Categories">Catégories</Link></li>
-                    <li><Link className={styles.link} href="/Outils">Outils</Link></li>
-                    <li><Link className={styles.link} href="/Statistiques">Statistiques</Link></li>
+                <li><Link href="/">Accueil</Link></li>
+                    <li><Link href="/Categories">Catégories</Link></li>
+                    <li><Link href="/Outils">Outils</Link></li>
+                    <li><Link href="/Statistiques">Statistiques</Link></li>
                 </ul>
             </div>
-            <button className={styles.button}>Connexion</button>
+            <button  className={styles.button}>Connexion</button >
         </div>
     );
 }
