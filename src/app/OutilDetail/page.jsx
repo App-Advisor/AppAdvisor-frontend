@@ -4,6 +4,7 @@ import Button from '@/components/Atoms/Button/Button';
 import logo from '@/assets/laravel_carre.png';
 import Img from '@/components/Atoms/Img/Img';
 import Pourcentage from '@/components/Atoms/Pourcentage/Pourcentage';
+import UserCard from '@/components/Molecules/UserCard/UserCard';
 
 export default function OutilDetail() {
 
@@ -44,8 +45,34 @@ export default function OutilDetail() {
                     <Pourcentage percentage={80} colorStart="#FF4098" colorEnd="#FFB47D" />
                     <Pourcentage percentage={60} colorStart="#10E7FF" colorEnd="#8437FF" />
                     <Pourcentage percentage={40} colorStart="#D820F9" colorEnd="#7202FF" />
-
                 </div>
+            </div>
+
+            <div className={styles.avis_container}>
+                <h2>Avis</h2>
+                <div className={styles.avis_list}>
+                    <UserCard 
+                        avis="Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos. Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!"
+                        nomUtilisateur="Jean du 12"
+                        note={4}
+                    />
+                    <UserCard 
+                        avis="Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos. Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!"
+                        nomUtilisateur="Jean du 12"
+                        note={4}
+                    />
+                    <UserCard 
+                        avis="Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos. Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!"
+                        nomUtilisateur="Jean du 12"
+                        note={4}
+                    />
+                    <UserCard 
+                        avis="Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos. Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!"
+                        nomUtilisateur="Jean du 12"
+                        note={4}
+                    />
+                </div>
+                <Button text="Voir plus" link="#avis"/>
             </div>
         </main>
     );
