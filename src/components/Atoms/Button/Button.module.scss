@@ -4,7 +4,18 @@
     background-color: $orange;
     color: white;
     border-radius: 10px;
-    padding: 15px 30px;
-    border: none;
+    padding: 10px 25px;
+    border: 2px solid $orange;
     width: max-content;
+    min-width: 125px;
+}
+
+.secondaryBtn {
+    background-color: transparent;
+    color: $orange;
+    border-radius: 10px;
+    padding: 10px 25px;
+    border: 2px solid $orange;
+    width: max-content;
+    min-width: 125px;
 }

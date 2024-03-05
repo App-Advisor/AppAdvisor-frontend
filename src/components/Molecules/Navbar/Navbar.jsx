@@ -1,18 +1,16 @@
 import logo from '@/assets/logo.png'
 import styles from './Navbar.module.scss';
-import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Atoms/Button/Button';
+import Img from '@/components/Atoms/Img/Img';
 
 export default function Navbar() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.img_container}>
-                <div className={styles.image}>
-                    <Image fill src={logo} style={{objectFit:"cover"}}/>
-                </div>
-            </div>
+            <Link href="/">
+                <Img src={logo} height={50} width={150} objectFit="cover"/>
+            </Link>
             <div>
                 <ul className={styles.navbar}>
                     <li><Link className={styles.link} href="/">Accueil</Link></li>

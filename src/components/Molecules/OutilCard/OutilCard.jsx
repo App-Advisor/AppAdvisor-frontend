@@ -1,22 +1,20 @@
-import Image from "next/image";
 import styles from "./OutilCard.module.scss";
 import Rating from "@/components/Atoms/Rating/Rating";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import Button from "@/components/Atoms/Button/Button";
+import Img from "@/components/Atoms/Img/Img";
 
-export default function OutilCard({image, nom, avis, note, nomUtilisateur}) {
+export default function OutilCard({image, nom, avis, note, starSize, nomUtilisateur}) {
     return (
         <div className={styles.card}>
-            <div className={styles.card_img}>
-                <Image fill src={image} style={{objectFit:"scale-down"}}/>
-            </div>
+            <Img src={image} height={175} width="100%" objectFit="scale-down"/>
             <div className={styles.separator}/>
             <div className={styles.card_container}>
                 <div className={styles.card_textWrapper}>
                     <div className={styles.card_content}>
                         <h3>{nom}</h3>
-                        <Rating note={note}/>
+                        <Rating note={note} starSize={starSize}/>
                     </div>
                     <div className={styles.card_content}>
                         <h3 className={styles.text_orange}>{nomUtilisateur}</h3>
