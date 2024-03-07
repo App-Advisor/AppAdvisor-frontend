@@ -1,5 +1,5 @@
 import styles from "./OutilCard.module.scss";
-import Rating from "@/components/Atoms/Rating/Rating";
+import Rating from "@/components/Molecules/Rating/Rating";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import Button from "@/components/Atoms/Button/Button";

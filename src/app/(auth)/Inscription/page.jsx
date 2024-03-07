@@ -1,6 +1,6 @@
 import Button from "@/components/Atoms/Button/Button";
 import styles from "./page.module.scss";
-import Input from "@/components/Atoms/Input/Input";
+import InputText from "@/components/Atoms/Input/InputText";
 
 export default function Inscription() {
   return (
@@ -9,9 +9,9 @@ export default function Inscription() {
         <div className={styles.container}>
             <form className={styles.form}>
                 <h2 className={styles.title}>Inscription</h2>
-                <Input type="text" placeholder="Nom"/>
-                <Input type="email" placeholder="Email"/>
-                <Input type="password" placeholder="Mot de passe"/>
+                <InputText type="text" placeholder="Nom"/>
+                <InputText type="email" placeholder="Email"/>
+                <InputText type="password" placeholder="Mot de passe"/>
                 <Button text="S'inscrire"/>
             </form>
         </div>
