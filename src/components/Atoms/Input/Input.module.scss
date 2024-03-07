@@ -9,3 +9,44 @@
     margin: 5px 0;
     font-size: 16px;
 }
+
+.label_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Style pour Chrome, Safari, et Edge */
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 20px; 
+    height: 20px; 
+    background: $orange; 
+    cursor: pointer;
+    border-radius: 50%;
+}
+  
+  /* Style pour Firefox */
+.range::-moz-range-thumb {
+    width: 20px;
+    height: 20px; 
+    background: $orange; 
+    cursor: pointer;
+    border-radius: 50%;
+}
+  
+.label {
+    color: $orange;
+    font-weight: 600;
+}
