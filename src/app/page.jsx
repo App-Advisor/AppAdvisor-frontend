@@ -4,22 +4,27 @@ import framework from "@/assets/svelte.png";
 import OutilCard from "@/components/Molecules/OutilCard/OutilCard";
 import SearchBar from "@/components/Molecules/SearchBar/SearchBar";
 import Img from "@/components/Atoms/Img/Img";
+import H1 from "@/components/Atoms/Title/H1/H1";
+import H2 from "@/components/Atoms/Title/H2/H2";
+import Container from "@/components/Atoms/Container/Container";
+import WrapperRow from "@/components/Atoms/Wrapper/WrapperRow";
+import Mask from "@/components/Atoms/Mask/Mask";
 
 export default function Home() {
   return (
   <main className={styles.main}>
     <div className={styles.hero}>
-      <div className={styles.hero_mask}/>
+      <Mask backgroundColor="rgba(0, 0, 0, 0.5)"/>
       <div className={styles.hero_container}>
         <Img src={zigzag} width={70} height={15} objectFit="cover"/>
-        <h1>Découvrez les meilleures solutions pour votre développement web</h1>
+        <H1>Découvrez les meilleures solutions pour votre développement web</H1>
         <SearchBar/>
       </div>
     </div>
 
-    <div className={styles.tools}>
-      <h2>Selection d'avis sur les outils</h2>
-      <div className={styles.card_wrapper}>
+    <Container flexDirection="column" alignItems="center" gap="50px" paddingTop="100px">
+      <H2>Selection d'avis sur les outils</H2>
+      <WrapperRow width="100%" justifyContent="center" gap="20px" wrap="wrap">
         <OutilCard image={framework} 
           nom="Svelte" 
           avis="Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos." 
@@ -43,12 +48,8 @@ export default function Home() {
           starSize={20}
           nomUtilisateur="Jeanne Dupont"
         />
-      </div>
-    </div>
-
-    <div className={styles.category}>
-
-    </div>
+      </WrapperRow>
+    </Container>
   </main>
   );
 }

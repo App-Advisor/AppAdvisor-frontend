@@ -50,3 +50,26 @@
     color: $orange;
     font-weight: 600;
 }
+
+.search {
+    width: 100%;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid $darkblue;
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+    background: transparent;
+}
+
+.search::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.message {
+    min-width: 300px;
+    min-height: 100px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
