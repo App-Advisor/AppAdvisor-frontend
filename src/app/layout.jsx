@@ -1,6 +1,6 @@
 import Header from "@/components/Organisms/Header/Header";
 import "./globals.scss";
-import "@/styles/index.scss";
+import Providers from "./providers"
 
 export const metadata = {
   title: "App Advisor",
@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body>
         <Header />
-        {children}
+          <Providers>
+              {children}
+          </Providers>
       </body>
     </html>
   );
