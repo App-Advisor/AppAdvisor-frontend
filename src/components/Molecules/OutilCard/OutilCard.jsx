@@ -12,12 +12,13 @@ import WrapperRow from "@/components/Atoms/Wrapper/WrapperRow";
 import H3 from "@/components/Atoms/Title/H3/H3";
 import P from "@/components/Atoms/Paragraph/P";
 
-export default function OutilCard({image, nom, avis, note, starSize, nomUtilisateur}) {
+export default function OutilCard({image, nom, avis, note, starSize, nomUtilisateur, outilId}) {
+
     return (
         <Card>
             <Img src={image} height={175} width="100%" objectFit="scale-down"/>
             <Separator />
-            <Wrapper justifyContent="space-between" height="60%" padding="20px">
+            <Wrapper justifyContent="space-between" height="60%" padding="20px" width="100%">
                 <Wrapper gap="20px">
                     <WrapperRow alignItems="center" justifyContent="space-between">
                         <H3>{nom}</H3>
@@ -32,7 +33,7 @@ export default function OutilCard({image, nom, avis, note, starSize, nomUtilisat
                     </WrapperRow>
                     <Elipse>{avis}</Elipse>
                 </Wrapper>
-                <Button text="Voir plus" />
+                <Button text="Voir plus" link={`/Outil/${outilId}`}/>
             </Wrapper>
         </Card>
     )

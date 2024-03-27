@@ -8,8 +8,8 @@ import Navbar from '../../Molecules/Navbar/Navbar';
 export default function Header() {
     const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
-    const pagesSpecifiques = ['/Profil', '/OutilDetail', '/Inscription', '/Connexion'];
-    const estSurPageSpecifique = pagesSpecifiques.includes(pathname);
+    const pagesSpecifiques = ['/Profil', '/Inscription', '/Connexion'];
+    const estSurPageSpecifique = pagesSpecifiques.includes(pathname) || pathname.startsWith('/Outil/');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,6 +19,8 @@ export default function Header() {
 
         if (!estSurPageSpecifique) {
             window.addEventListener('scroll', handleScroll);
+        } else {
+            setIsScrolled(false);
         }
 
         return () => {
@@ -26,7 +28,7 @@ export default function Header() {
                 window.removeEventListener('scroll', handleScroll);
             }
         };
-    }, [estSurPageSpecifique, pathname]); 
+    }, [estSurPageSpecifique]); 
 
     const headerClass = estSurPageSpecifique || isScrolled ? styles.bleu : styles.transparent;
 

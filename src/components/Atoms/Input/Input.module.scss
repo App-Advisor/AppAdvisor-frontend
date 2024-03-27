@@ -73,3 +73,14 @@
     border: none;
     border-radius: 5px;
 }
+
+.button {
+    background-color: $orange;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 25px;
+    border: 2px solid $orange;
+    width: max-content;
+    min-width: 125px;
+    cursor: pointer;
+}

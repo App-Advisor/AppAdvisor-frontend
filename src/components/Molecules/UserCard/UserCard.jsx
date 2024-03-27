@@ -10,7 +10,7 @@ import P from "@/components/Atoms/Paragraph/P";
 export default function UserCard({avis, note, nomUtilisateur}) {
     return (
         <Card>
-            <Wrapper justifyContent="space-between" padding="20px" gap="10px">
+            <Wrapper justifyContent="space-between" padding="20px" gap="10px" width="100%">
                 <WrapperRow alignItems="center" gap="10px">
                     <H3>{nomUtilisateur}</H3>
                     <WrapperRow alignItems="center" gap="5px">

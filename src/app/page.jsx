@@ -46,12 +46,13 @@ export default function Home() {
         {avis.map(avis => (
             <OutilCard 
               key={avis._id} 
-              //image={avis.outils.imageURL} 
-              //nom={avis.outils.name}
+              image={avis.outils.imageURL} 
+              nom={avis.outils.name}
               avis={avis.message} 
               note={avis.note}
               starSize={20}
-              //nomUtilisateur={avis.user.name}
+              nomUtilisateur={avis.user.name}
+              outilId={avis.outils._id}
             />
         ))} 
       </WrapperRow>
