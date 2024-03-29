@@ -33,7 +33,7 @@ export default function Inscription() {
       alert('Inscription réussie');
     } catch (error) {
       console.error("Erreur d'inscription", error.response);
-      const message = error.response && error.response.data ? error.response.data.message : "Une erreur est survenue lors de l'inscription";
+      const message = error.response && error.response.data ? error.response.data.msg : "Une erreur est survenue lors de l'inscription";
       setErrorMsg(message);
     }
   };

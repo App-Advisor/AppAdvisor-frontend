@@ -8,26 +8,17 @@ import Container from '@/components/Atoms/Container/Container';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.scss';
-import Cookies from 'js-cookie';
-import { jwtDecode } from 'jwt-decode';
+import WrapperRow from '@/components/Atoms/Wrapper/WrapperRow';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Navbar() {
     const [mounted, setMounted] = useState(false);
     const { resolvedTheme, setTheme } = useTheme();
-    const [userId, setUserId] = useState(null);
+    const { user } = useAuth();
+    const userId = user ? user.id : null;
 
     useEffect(() => {
         setMounted(true);
-
-        const token = Cookies.get('token');
-        if (token) {
-            try {
-                const decoded = jwtDecode(token);
-                setUserId(decoded.userId); 
-            } catch (error) {
-                console.error("Erreur de décodage du token :", error);
-            }
-        }
     }, []);
 
     if (!mounted) {
@@ -41,18 +32,20 @@ export default function Navbar() {
             </Link>
             <List>
                 <LinkItem href="/">Accueil</LinkItem>
-                <LinkItem href="/Categories">Catégories</LinkItem>
+                {/*<LinkItem href="/Categories">Catégories</LinkItem>*/}
                 <LinkItem href="/Outils">Outils</LinkItem>
-                <LinkItem href="/Statistiques">Statistiques</LinkItem>
+                {/*<LinkItem href="/Statistiques">Statistiques</LinkItem>*/}
             </List>
-            {userId ? (
-                <Button text="Profil" link={`/Profil/${userId}`} />
-            ) : (
-                <Button text="Connexion" link="/Connexion" />
-            )}
-            <button className={styles.button} onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}>
-                {resolvedTheme === "light" ? "☀️" : "🌙"}
-            </button>
+            <WrapperRow gap="20px">
+                {user ? (
+                    <Button text="Profil" link={`/Profil/${userId}`} />
+                ) : (
+                    <Button text="Connexion" link="/Connexion" />
+                )}
+                <button className={styles.button} onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}>
+                    {resolvedTheme === "light" ? "☀️" : "🌙"}
+                </button>
+            </WrapperRow>
         </Container>
     );
 }

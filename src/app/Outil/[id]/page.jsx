@@ -34,6 +34,7 @@ export default function OutilDetail({ params: {id} }) {
     const [outil, setOutil] = useState([]);
     const [afficherTous, setAfficherTous] = useState(false);
     const [avisList, setAvisList] = useState([]);
+    const token = Cookies.get('token');
 
     useEffect(() => {
         const chargerOutil = async () => {
@@ -81,8 +82,7 @@ export default function OutilDetail({ params: {id} }) {
 
       const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        const token = Cookies.get('token'); 
+     
         if (!token) {
             console.error("L'utilisateur n'est pas authentifié.");
             return;
@@ -162,31 +162,35 @@ export default function OutilDetail({ params: {id} }) {
             <Container id="avis" justifyContent="center" paddingTop="100px">
                 <div className={styles.form_wrapper}>
                     <H2>Donner un avis</H2>
-                    <form className={styles.form} onSubmit={handleSubmit}>
-                        <Wrapper width="100%" gap="20px">
-                            <TextArea message={message} placeholder="message" onChange={(e) => setMessage(e.target.value)} />
-                            <WrapperRow justifyContent="space-between" gap="20px">
-                                <Wrapper width="50%" gap="20px">
-                                    <Wrapper width="100%" gap="10px">
-                                        <InputRange label="Difficulté" id="difficulty" value={difficulty} onChange={(e) => handleSliderChange('difficulty', e.target.value)} />
+                    { token ? (
+                        <form className={styles.form} onSubmit={handleSubmit}>
+                            <Wrapper width="100%" gap="20px">
+                                <TextArea message={message} placeholder="message" onChange={(e) => setMessage(e.target.value)} />
+                                <WrapperRow justifyContent="space-between" gap="20px">
+                                    <Wrapper width="50%" gap="20px">
+                                        <Wrapper width="100%" gap="10px">
+                                            <InputRange label="Difficulté" id="difficulty" value={difficulty} onChange={(e) => handleSliderChange('difficulty', e.target.value)} />
+                                        </Wrapper>
+                                        <Wrapper width="100%" gap="10px">
+                                            <InputRange label="Performance" id="performance" value={performance} onChange={(e) => handleSliderChange('performance', e.target.value)} />
+                                        </Wrapper>
+                                        <Wrapper width="100%" gap="10px">
+                                            <InputRange label="Flexibilité" id="flexibility" value={flexibility} onChange={(e) => handleSliderChange('flexibility', e.target.value)} />
+                                        </Wrapper>
                                     </Wrapper>
-                                    <Wrapper width="100%" gap="10px">
-                                        <InputRange label="Performance" id="performance" value={performance} onChange={(e) => handleSliderChange('performance', e.target.value)} />
+                                    <Wrapper width="30%" gap="20px" alignItems="center" justifyContent="center">
+                                        <H3 color="#DF6951">Note globale</H3>
+                                        <Wrapper width="100%" gap="10px">
+                                            <InputRange label="Note" id="note" value={note} onChange={(e) => handleSliderChange('note', e.target.value)} />
+                                        </Wrapper>
+                                        <InputButton text="Valider"/>
                                     </Wrapper>
-                                    <Wrapper width="100%" gap="10px">
-                                        <InputRange label="Flexibilité" id="flexibility" value={flexibility} onChange={(e) => handleSliderChange('flexibility', e.target.value)} />
-                                    </Wrapper>
-                                </Wrapper>
-                                <Wrapper width="30%" gap="20px" alignItems="center" justifyContent="center">
-                                    <H3 color="#DF6951">Note globale</H3>
-                                    <Wrapper width="100%" gap="10px">
-                                        <InputRange label="Note" id="note" value={note} onChange={(e) => handleSliderChange('note', e.target.value)} />
-                                    </Wrapper>
-                                    <InputButton text="Valider"/>
-                                </Wrapper>
-                            </WrapperRow>
-                        </Wrapper>  
-                    </form>  
+                                </WrapperRow>
+                            </Wrapper>  
+                        </form> 
+                    ) : (
+                        <P>Vous devez être connecté pour donner un avis</P>
+                    )} 
                 </div>
             </Container>
 

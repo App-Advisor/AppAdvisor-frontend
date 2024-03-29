@@ -2,7 +2,7 @@
 
 import styles from "./page.module.scss";
 import zigzag from "@/assets/zigzag.svg";
-import OutilCard from "@/components/Molecules/OutilCard/OutilCard";
+import OutilAvisCard from "@/components/Molecules/OutilAvisCard/OutilAvisCard";
 import SearchBar from "@/components/Molecules/SearchBar/SearchBar";
 import Img from "@/components/Atoms/Img/Img";
 import H1 from "@/components/Atoms/Title/H1/H1";
@@ -44,7 +44,7 @@ export default function Home() {
       <H2>Selection d'avis sur les outils</H2>
       <WrapperRow width="100%" justifyContent="center" gap="20px" wrap="wrap">
         {avis.map(avis => (
-            <OutilCard 
+            <OutilAvisCard 
               key={avis._id} 
               image={avis.outils.imageURL} 
               nom={avis.outils.name}

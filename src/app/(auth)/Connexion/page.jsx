@@ -13,12 +13,14 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import InputButton from "@/components/Atoms/Input/InputButton";
 import Cookies from 'js-cookie';
+import { useAuth } from "@/context/AuthContext";
 
 export default function Connexion() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState(''); 
   const router = useRouter();
+  const { setUser } = useAuth();
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -30,13 +32,12 @@ export default function Connexion() {
         password,
       });
       Cookies.set('token', response.data.token, { expires: 7 });
-      console.log(response.data);
+      setUser({ id: response.data.userId });
       router.push('/');
-      alert('Connexion réussie');
     } catch (error) {
       console.error("Erreur complète: ", error);
       console.error("Erreur de connexion", error.response);
-      const message = error.response && error.response.data ? error.response.data.message : "Une erreur est survenue";
+      const message = error.response && error.response.data ? error.response.data.msg : "Une erreur est survenue";
       setErrorMsg(message);
     }
   };

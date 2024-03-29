@@ -2,6 +2,7 @@ import Header from "@/components/Organisms/Header/Header";
 import "./globals.scss";
 import "@/styles/index.scss";
 import { ThemeProvider } from 'next-themes';
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata = {
   title: "App Advisor",
@@ -15,8 +16,10 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem >
-          <Header />
-          {children}
+          <AuthProvider>
+            <Header />
+            {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

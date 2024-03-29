@@ -11,15 +11,17 @@ import InputButton from '@/components/Atoms/Input/InputButton';
 import InputText from "@/components/Atoms/Input/InputText";
 import SecondaryBtn from "@/components/Atoms/Button/SecondaryBtn";
 import Cookies from 'js-cookie';
+import { useAuth } from "@/context/AuthContext";
 
 export default function Profil({ params: {id} }) {
-  const [user, setUser] = useState({ name: '', email: '' });
+  const [userProfil, setUserProfil] = useState({ name: '', email: '' });
+  const { setUser } = useAuth();
 
   useEffect(() => {
       const chargerProfil = async () => {
           try {
               const reponse = await axios.get(`http://localhost:3000/user/${id}`);
-              setUser(reponse.data);
+              setUserProfil(reponse.data);
           } catch (erreur) {
               console.error("Erreur lors de la récupération de l'utilisateur:", erreur);
           }
@@ -30,7 +32,7 @@ export default function Profil({ params: {id} }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser((prevUser) => ({
+    setUserProfil((prevUser) => ({
       ...prevUser,
       [name]: value,
     }));
@@ -39,7 +41,7 @@ export default function Profil({ params: {id} }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/user/${id}`, user);
+      await axios.put(`http://localhost:3000/user/${id}`, userProfil);
       alert('Profil mis à jour avec succès!');
     } catch (erreur) {
       console.error("Erreur lors de la mise à jour de l'utilisateur:", erreur);
@@ -48,6 +50,7 @@ export default function Profil({ params: {id} }) {
 
   const handleLogout = () => {
     Cookies.remove('token');
+    setUser(null);
     alert('Vous êtes déconnecté.');
 };
 
@@ -60,10 +63,10 @@ export default function Profil({ params: {id} }) {
                 <WrapperRow justifyContent="center" width="100%" gap="20px">
                   <Wrapper alignItems="center" width="70%" gap="20px">
                     <Wrapper width="100%" gap="10px">
-                      <InputText type="text" name="name" value={user.name} onChange={handleChange} />
+                      <InputText type="text" name="name" value={userProfil.name} onChange={handleChange} />
                     </Wrapper>
                     <Wrapper width="100%" gap="10px">
-                      <InputText type="email" name="email" value={user.email} onChange={handleChange} />
+                      <InputText type="email" name="email" value={userProfil.email} onChange={handleChange} />
                     </Wrapper>
                     <WrapperRow justifyContent="center" width="max-content" gap="10px">
                       <InputButton text="Valider"/>
