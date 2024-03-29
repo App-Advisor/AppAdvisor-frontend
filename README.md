@@ -13,7 +13,7 @@ git init
 ``` 
 Suivez les instructions pour lier votre dossier local à un dépôt distant.
 
-## Étape 2: Installer les dépendances
+## Étape 3: Installer les dépendances
 
 Installez toutes les dépendances nécessaires pour le bon fonctionnement du projet
 
@@ -21,7 +21,7 @@ Installez toutes les dépendances nécessaires pour le bon fonctionnement du pro
 npm install 
 ``` 
 
-## Étape 3: Lancer votre projet
+## Étape 4: Lancer votre projet
 
 Pour voir votre travail en action, lancez le serveur de développement :
 
