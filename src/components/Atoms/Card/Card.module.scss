@@ -6,7 +6,7 @@
     align-items: center;
     width: 28%;
     min-width: 280px;
-    background-color: white;
+    background-color: var(--card-color);
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -21,4 +21,5 @@
     padding: 20px 50px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--card-color);
 }

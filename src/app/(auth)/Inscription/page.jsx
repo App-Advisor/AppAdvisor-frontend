@@ -30,6 +30,7 @@ export default function Inscription() {
       });
       console.log(response.data);
       router.push('/Connexion');
+      alert('Inscription réussie');
     } catch (error) {
       console.error("Erreur d'inscription", error.response);
       const message = error.response && error.response.data ? error.response.data.message : "Une erreur est survenue lors de l'inscription";
@@ -42,7 +43,7 @@ export default function Inscription() {
         <Mask backgroundColor="rgba(0, 0, 0, 0.3)" backdropFilter="blur(20px)"/>
         <Wrapper alignItems="center" justifyContent="center" height="100%" zIndex="20">
             <LoginCard onSubmit={handleSignUp}>
-                <H2 color="#050560">Inscription</H2>
+                <H2>Inscription</H2>
                 {errorMsg && <p className={styles.errorMsg}>{errorMsg}</p>}
                 <InputText type="text" placeholder="Nom" value={name} onChange={(e) => setName(e.target.value)}/>
                 <InputText type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>

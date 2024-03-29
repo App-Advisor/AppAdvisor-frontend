@@ -24,7 +24,6 @@ import Cookies from 'js-cookie';
 import InputButton from '@/components/Atoms/Input/InputButton';
 
 export default function OutilDetail({ params: {id} }) {
-    const bgColor = "#181E4B";
     const nbAvis = 12;
     const categorie = "Développement web";
     const [message, setMessage] = useState('');
@@ -120,7 +119,7 @@ export default function OutilDetail({ params: {id} }) {
                     <div>
                         <H3 color="#DF6951">{categorie}</H3>
                         <WrapperRow alignItems="center" gap="10px">
-                            <H1 color="#181E4B">{outil.name}</H1>
+                            <H1>{outil.name}</H1>
                             <Rating note={4} starSize={25} />
                             <P>({nbAvis} avis)</P>
                         </WrapperRow>
@@ -132,7 +131,7 @@ export default function OutilDetail({ params: {id} }) {
                     <Button text="Donner un avis" link="#avis"/>
                 </Wrapper>
                 <WrapperRow width="50%" height="400px" alignItems="center" justifyContent="center">
-                    <OutilImg bgColor={bgColor}>
+                    <OutilImg>
                         <Img src={outil.imageURL} height="50%" width="100%" objectFit="scale-down"/>
                     </OutilImg>
                 </WrapperRow>
@@ -190,6 +189,7 @@ export default function OutilDetail({ params: {id} }) {
                     </form>  
                 </div>
             </Container>
+
 
             <Container flexDirection="column" alignItems="center" paddingTop="100px" gap="50px">
                 <H2>Avis</H2>

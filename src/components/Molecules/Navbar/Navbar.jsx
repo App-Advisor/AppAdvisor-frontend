@@ -1,13 +1,38 @@
 import logo from '@/assets/logo.png'
-import styles from './Navbar.module.scss';
 import Link from 'next/link';
 import Button from '@/components/Atoms/Button/Button';
 import Img from '@/components/Atoms/Img/Img';
 import List from '@/components/Atoms/List/List';
 import LinkItem from '@/components/Molecules/LinkItem/LinkItem';
 import Container from '@/components/Atoms/Container/Container';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import styles from './Navbar.module.scss';
+import Cookies from 'js-cookie';
+import { jwtDecode } from 'jwt-decode';
 
 export default function Navbar() {
+    const [mounted, setMounted] = useState(false);
+    const { resolvedTheme, setTheme } = useTheme();
+    const [userId, setUserId] = useState(null);
+
+    useEffect(() => {
+        setMounted(true);
+
+        const token = Cookies.get('token');
+        if (token) {
+            try {
+                const decoded = jwtDecode(token);
+                setUserId(decoded.userId); 
+            } catch (error) {
+                console.error("Erreur de décodage du token :", error);
+            }
+        }
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
 
     return (
         <Container justifyContent="space-between" alignItems="center" height="80px">
@@ -20,7 +45,14 @@ export default function Navbar() {
                 <LinkItem href="/Outils">Outils</LinkItem>
                 <LinkItem href="/Statistiques">Statistiques</LinkItem>
             </List>
-            <Button text="Connexion" link="/Connexion" />
+            {userId ? (
+                <Button text="Profil" link={`/Profil/${userId}`} />
+            ) : (
+                <Button text="Connexion" link="/Connexion" />
+            )}
+            <button className={styles.button} onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}>
+                {resolvedTheme === "light" ? "☀️" : "🌙"}
+            </button>
         </Container>
     );
 }

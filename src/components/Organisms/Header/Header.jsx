@@ -8,8 +8,8 @@ import Navbar from '../../Molecules/Navbar/Navbar';
 export default function Header() {
     const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
-    const pagesSpecifiques = ['/Profil', '/Inscription', '/Connexion'];
-    const estSurPageSpecifique = pagesSpecifiques.includes(pathname) || pathname.startsWith('/Outil/');
+    const pagesSpecifiques = ['/Inscription', '/Connexion'];
+    const estSurPageSpecifique = pagesSpecifiques.includes(pathname) || pathname.startsWith('/Outil/') || pathname.startsWith('/Profil/');
 
     useEffect(() => {
         const handleScroll = () => {

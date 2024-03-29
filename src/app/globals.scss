@@ -10,35 +10,16 @@ html, body {
 * {
     box-sizing: border-box;
 }
-  
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   font-family: 'Inter', sans-serif;
-  color: rgb(var(--background-start-rgb));
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgb(var(--foreground-rgb))
-  ), rgb(var(--foreground-rgb));
+  background: var(--background-color);
 }
 
 h1 {
   font-size: 40px;
   font-weight: 700;
-  color: white;
+  color: var(--title-color);
   margin: 0;
   line-height: 140%;
   font-family: 'Poppins', sans-serif;
@@ -47,7 +28,7 @@ h1 {
 h2 {
   font-size: 32px;
   font-weight: 700;
-  color: $darkblue;
+  color: var(--text-color);
   margin: 0;
   font-family: 'Volkhov', serif;
 }
@@ -55,17 +36,18 @@ h2 {
 h3, h4, h5, h6 {
   font-family: 'Volkhov', serif;
   margin: 0;
+  color: var(--text-card-color);
 }
 
 a {
   text-decoration: none;
-  color: $darkblue;
+  color: var(--text-card-color);
   margin: 0;
 }
 
 p {
   font-size: 16px;
-  color: $darkblue;
+  color: var(--text-card-color);
   margin: 0;
 }
 

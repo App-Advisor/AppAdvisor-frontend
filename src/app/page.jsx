@@ -35,7 +35,7 @@ export default function Home() {
       <Mask backgroundColor="rgba(0, 0, 0, 0.5)"/>
       <div className={styles.hero_container}>
         <Img src={zigzag} width={70} height={15} objectFit="cover"/>
-        <H1>Découvrez les meilleures solutions pour votre développement web</H1>
+        <H1 color="#fff">Découvrez les meilleures solutions pour votre développement web</H1>
         <SearchBar/>
       </div>
     </div>

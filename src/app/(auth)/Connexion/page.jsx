@@ -32,6 +32,7 @@ export default function Connexion() {
       Cookies.set('token', response.data.token, { expires: 7 });
       console.log(response.data);
       router.push('/');
+      alert('Connexion réussie');
     } catch (error) {
       console.error("Erreur complète: ", error);
       console.error("Erreur de connexion", error.response);
@@ -45,7 +46,7 @@ export default function Connexion() {
       <Mask backgroundColor="rgba(0, 0, 0, 0.3)" backdropFilter="blur(20px)" />
       <Wrapper alignItems="center" justifyContent="center" height="100%" zIndex="20">
           <LoginCard onSubmit={handleLogin}>
-            <H2 color="#050560">Connexion</H2>
+            <H2>Connexion</H2>
             <InputText type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <InputText type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
             {errorMsg && <p className={styles.errorMsg}>{errorMsg}</p>}
