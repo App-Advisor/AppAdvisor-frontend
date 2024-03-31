@@ -1,4 +1,4 @@
-import Header from "@/components/Header/Header";
+import Header from "@/components/Organisms/Header/Header";
 import "./globals.scss";
 import "@/styles/index.scss";
 import Footer from "@/components/Footer/Footer"

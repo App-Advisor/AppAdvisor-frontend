@@ -1,0 +1,23 @@
+@import "@/styles/index.scss";
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $padding;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.navbar {
+    display: flex;
+    gap: 40px;
+
+    .link {
+        color: white
+    }
+}
+
+.navbar li {
+    list-style: none;
+}

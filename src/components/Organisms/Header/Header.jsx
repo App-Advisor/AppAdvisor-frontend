@@ -3,17 +3,17 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.scss';
-import Navbar from './Navbar/Navbar';
+import Navbar from '../../Molecules/Navbar/Navbar';
 
 export default function Header() {
     const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
-    const pagesSpecifiques = ['/Profil', '/Outils'];
+    const pagesSpecifiques = ['/Profil', '/OutilDetail', '/Inscription', '/Connexion'];
     const estSurPageSpecifique = pagesSpecifiques.includes(pathname);
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollTop = document.documentElement.scrollTop;
             setIsScrolled(scrollTop > 100);
         };
 

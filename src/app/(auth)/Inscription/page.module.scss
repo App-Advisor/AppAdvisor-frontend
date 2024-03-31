@@ -1,0 +1,47 @@
+@import "@/styles/index.scss";
+
+.main {
+    background-image: url("/Hero.webp");
+    height: 100vh;
+    background-size: cover;
+    background-position: center; 
+    position: relative; 
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    color: $nightblue;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    padding: 20px 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
