@@ -1,0 +1,48 @@
+// page.module.scss
+
+@import '@/styles/index.scss';
+
+.main {
+    padding-bottom: 150px;
+}
+
+.form_wrapper {
+    background-color: var(--avis-card-color);
+    padding: 20px;
+    width: 100%; /* Adjust width for smaller screens */
+    max-width: 400px; /* Limit maximum width for larger screens */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.form {
+    width: 100%;
+}
+
+.button {
+    background-color: $orange;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 25px;
+    border: 2px solid $orange;
+    width: max-content;
+    min-width: 125px;
+}
+
+@media screen and (max-width: 768px) {
+    .form_wrapper {
+        padding: 10px; /* Decrease padding on smaller screens */
+    }
+
+    .form_wrapper {
+        max-width: 90%; /* Adjust maximum width for smaller screens */
+    }
+
+    .button {
+        min-width: 100px; /* Adjust button width for smaller screens */
+    }
+}

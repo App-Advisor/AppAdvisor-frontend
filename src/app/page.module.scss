@@ -1,8 +1,10 @@
-@import "@/styles/index.scss";
+// page.module.scss
+
+@import "../styles/index.scss";
 
 /*
-* Hero
-*/
+ * Hero
+ */
 .hero {
     height: 90vh;
     width: 100%;
@@ -14,7 +16,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
 }
 
 .hero_mask {
@@ -41,8 +42,8 @@
 }
 
 /*
-* Outils
-*/
+ * Outils
+ */
 .tools {
     padding-top: 100px;
     display: flex;
@@ -53,7 +54,7 @@
 }
 
 .card_wrapper {
-    width: $padding;
+    width: 100%; /* Adjust width for smaller screens */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -61,8 +62,8 @@
 }
 
 /*
-* Catégories
-*/
+ * Catégories
+ */
 .category {
     padding-top: 100px;
     display: flex;
@@ -70,4 +71,19 @@
     align-items: center;
     justify-content: flex-start;
     gap: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero_container {
+        margin-left: 10%; /* Adjust margin for smaller screens */
+        width: 80%; /* Adjust width for smaller screens */
+    }
+
+    .hero_container h1 {
+        width: 100%; /* Adjust width for smaller screens */
+    }
+
+    .card_wrapper {
+        padding: 0 20px; /* Adjust padding for smaller screens */
+    }
 }

@@ -1,20 +1,25 @@
 import styles from "./UserCard.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import Card from "@/components/Atoms/Card/Card";
+import Wrapper from "@/components/Atoms/Wrapper/Wrapper";
+import WrapperRow from "@/components/Atoms/Wrapper/WrapperRow";
+import H3 from "@/components/Atoms/Title/H3/H3";
+import P from "@/components/Atoms/Paragraph/P";
 
 export default function UserCard({avis, note, nomUtilisateur}) {
     return (
-        <div className={styles.card}>
-            <div className={styles.card_container}>
-                <div className={styles.card_content}>
-                    <h3>{nomUtilisateur}</h3>
-                    <div className={styles.avis}>
+        <Card>
+            <Wrapper justifyContent="space-between" padding="20px" gap="10px" width="100%">
+                <WrapperRow alignItems="center" gap="10px">
+                    <H3>{nomUtilisateur}</H3>
+                    <WrapperRow alignItems="center" gap="5px">
                         <FontAwesomeIcon className={styles.icon} icon={faStar}/>
-                        <p>{note}/5</p>
-                    </div>
-                </div>
-                <p>{avis}</p>
-            </div>
-        </div>
+                        <P>{note}/5</P>
+                    </WrapperRow>
+                </WrapperRow>
+                <P>{avis}</P>
+            </Wrapper>
+        </Card>
     )
 }

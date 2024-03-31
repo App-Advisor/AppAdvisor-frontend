@@ -1,23 +1,10 @@
 @import "@/styles/index.scss";
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: $padding;
-    margin: 0 auto;
-    height: 80px;
-}
-
-.navbar {
-    display: flex;
-    gap: 40px;
-
-    .link {
-        color: white
-    }
-}
-
-.navbar li {
-    list-style: none;
+.button {
+    background-color: var(--button-theme);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: max-content;
+    border: none;
 }

@@ -9,25 +9,3 @@
     padding: 20px;
     border-radius: 10px;
 }
-
-.form input[type="text"] {
-    width: 100%;
-	border: none;
-	outline: none;
-	border-bottom: .2em solid $darkblue;
-	border-radius: .2em .2em 0 0;
-	padding: .4em;
-    background: transparent;
-}
-
-.form input[type="text"]::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.button {
-    background-color: $orange;
-    color: white;
-    border-radius: 10px;
-    padding: 15px 30px;
-    border: none;
-}
